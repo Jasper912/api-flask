@@ -1,0 +1,21 @@
+[uwsgi]
+auto-procname = true
+procname-prefix-spaced = flipgame-actapi
+socket = 0.0.0.0:2460
+chmod-socket=770
+master = true
+wsgi-file = run.py
+callable = app
+touch-reload = /data/vhost/flipgame-actapi/reload
+uid = www-data
+gid = www-data
+processes = 1
+max-requests = 100000
+disable-logging = true
+virtualenv = /home/wbdev/virtualenv/flipgame-actapi
+chdir = /data/vhost/flipgame-actapi/
+gevent = 100
+gevent-monkey-patch = true
+daemonize = /data/log/flipgame-actapi/uwsgi.log
+stats = 127.0.0.1:9198
+pidfile = /tmp/uwsgi-flipgame-actapi.pid
