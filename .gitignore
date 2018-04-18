@@ -1,0 +1,7 @@
+*pyc
+*~
+*yaml
+test_*
+*.log
+connconf/*config.py
+conf.py
